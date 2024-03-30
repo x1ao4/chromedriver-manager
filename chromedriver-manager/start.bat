@@ -1,5 +1,5 @@
 @echo off
 
-python3 C:\path\to\chromedriver-manager.py
+python3 D:\path\to\chromedriver-manager.py
 
 pause
