@@ -11,21 +11,28 @@ webdriver_path = ChromeDriverManager().install()
 if not os.path.basename(webdriver_path) == 'chromedriver':
     webdriver_path = os.path.join(os.path.dirname(webdriver_path), 'chromedriver')
 
-os.chmod(webdriver_path, stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-
-driver = webdriver.Chrome(service=Service(webdriver_path))
-
-version = driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0]
-
 destination_path = '/usr/local/bin/chromedriver'
 
-shutil.move(webdriver_path, destination_path)
+if os.path.exists(destination_path):
+    system_lang = locale.getlocale()[0]
+    driver = webdriver.Chrome(service=Service(destination_path))
+    version = driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0]
+    driver.quit()
+    
+    if system_lang.startswith('zh'):
+        print(f"ChromeDriver {version} 已是最新版本")
+    else:
+        print(f"ChromeDriver {version} is up to date")
 
-system_lang = locale.getlocale()[0]
-
-if system_lang.startswith('zh'):
-    print(f"已更新 ChromeDriver 至 {version} 版本")
 else:
-    print(f"ChromeDriver has been updated to version {version}")
+    os.chmod(webdriver_path, stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+    system_lang = locale.getlocale()[0]
+    driver = webdriver.Chrome(service=Service(webdriver_path))
+    version = driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0]
+    shutil.move(webdriver_path, destination_path)
+    driver.quit()
 
-driver.quit()
+    if system_lang.startswith('zh'):
+        print(f"已更新 ChromeDriver 至 {version} 版本")
+    else:
+        print(f"ChromeDriver has been updated to version {version}")

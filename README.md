@@ -1,30 +1,64 @@
-# chromedriver-manager
-chromedriver-manager 是一个自动下载和安装 ChromeDriver 的 Python 脚本，脚本会使用 `webdriver_manager` 从 ChromeDriver 的官方网站下载最新版本的 ChromeDriver，并将其移动到你指定的系统 PATH 中的某个目录下，从而完成 ChromeDriver 的安装和更新工作。
+# ChromeDriver Manager <a name="chromedriver-manager-zh"></a>
+<a href="#chromedriver-manager-en">Switch to English</a>
+
+ChromeDriver Manager（下文简称 CDM）是一个自动下载和安装 ChromeDriver 的工具，它会从 ChromeDriver 的官方网站下载最新版本的 ChromeDriver，并将其移动到 `/usr/local/bin` 目录中，从而完成 ChromeDriver 的安装和更新工作。
 
 ## 运行条件
 - 安装了 Python 3.0 或更高版本。
-- 安装了必要的第三方库：selenium、webdriver_manager。（可以通过 `pip3 install selenium webdriver_manager` 安装）
-- 安装了 Chrome 浏览器。
+- 使用命令 `pip3 install -r requirements.txt` 安装了必要的第三方库。
+- 安装了 Google Chrome 浏览器。
 
 ## 使用方法
-1. 将仓库克隆或下载到计算机上的一个目录中。
-2. 修改 `start.command (Mac)` 或 `start.bat (Win)` 中的路径，以指向你保存的 `chromedriver-manager.py` 脚本。
-3. 打开 `chromedriver-manager.py` 脚本，按需要修改 `destination_path` 参数，设置 ChromeDriver 的安装路径（请确保选择的安装目录存在并且已经被添加到了 PATH 环境变量中，同时你也需要有足够的权限来写入目标目录，Windows 用户在设置路径时请参考此格式：`D:\\WebDrivers\\chromedriver.exe`）。
-4. 双击运行 `start.command` 或 `start.bat` 脚本以执行 `chromedriver-manager.py` 脚本。
-5. 脚本将开始下载最新版本的 ChromeDriver，然后将其移动到指定的路径完成安装，并在控制台显示版本更新信息。
+1. 通过 [Releases](https://github.com/x1ao4/chromedriver-manager/releases) 下载最新版本的压缩包并解压到本地目录中。
+2. 打开终端或命令行工具，使用 `cd` 命令切换到脚本所在的目录。
+3. 使用命令 `python3 chromedriver-manager.py` 启动 CDM。
+4. CDM 将自动下载最新版本的 ChromeDriver 进行安装，并在控制台显示版本信息。
+
+## 快速启动
+通过双击 `chromedriver-manager.command` 脚本可以快速启动 CDM。
+
+## 注意事项
+- 请确保你的网络可以正常访问 ChromeDriver 的官方网站。
+- 请确保你拥有足够的权限向 `/usr/local/bin` 写入文件。
+- CDM 仅适用于 macOS。
+
+## 赞赏
+如果你觉得这个项目对你有用，可以请我喝杯咖啡。如果你喜欢这个项目，可以给我一个⭐️。谢谢你的支持！
+
+<img width="399" alt="赞赏" src="https://github.com/user-attachments/assets/bdd2226b-6282-439d-be92-5311b6e9d29c">
+<br><br>
+<a href="#chromedriver-manager-zh">回到顶部</a>
+<br>
+<br>
 <br>
 
-# chromedriver-manager
-chromedriver-manager is a Python script that automatically downloads and installs ChromeDriver. The script utilizes `webdriver_manager` to download the latest version of ChromeDriver from the official website and moves it to a directory specified in your system's PATH, thus completing the installation and updating of ChromeDriver.
+# ChromeDriver Manager <a name="chromedriver-manager-en"></a>
+<a href="#chromedriver-manager-zh">切换至中文</a>
+
+ChromeDriver Manager (hereinafter referred to as CDM) is a tool for automatically downloading and installing ChromeDriver. It fetches the latest version of ChromeDriver from the official website and moves it to the `/usr/local/bin` directory, completing the installation and update process of ChromeDriver.
 
 ## Requirements
-- Installed Python 3.0 or higher.
-- Installed required third-party libraries: selenium, webdriver_manager. (Install with `pip3 install selenium webdriver_manager`)
-- Installed Chrome browser.
+- Python 3.0 or higher installed.
+- Necessary third-party libraries installed using the command `pip3 install -r requirements.txt`.
+- Google Chrome browser installed.
 
 ## Usage
-1. Clone or download the repository to a directory on your computer.
-2. Modify the path in `start.command (Mac)` or `start.bat (Win)` to point to the `chromedriver-manager.py` script you saved.
-3. Open the `chromedriver-manager.py` script and modify the `destination_path` parameter as needed to set the installation path for ChromeDriver. (Ensure that the selected installation directory exists, has been added to the PATH environment variable, and that you have sufficient permissions to write to the target directory. For Windows users, use this format when setting the path: `D:\\WebDrivers\\chromedriver.exe`).
-4. Double-click `start.command` or `start.bat` to execute the `chromedriver-manager.py` script.
-5. The script will start downloading the latest version of ChromeDriver, then move it to the specified path to complete the installation, and display the version update information in the console.
+1. Download the latest release package from [Releases](https://github.com/x1ao4/chromedriver-manager/releases) and extract it to a local directory.
+2. Open a terminal or command line tool, use the `cd` command to switch to the directory where the script is located.
+3. Start CDM by running the command `python3 chromedriver-manager.py`.
+4. CDM will automatically download and install the latest version of ChromeDriver, displaying version information in the console.
+
+## Quick Start
+Double-click the `chromedriver-manager.command` script to quickly launch CDM.
+
+## Notes
+- Ensure your network can access the ChromeDriver official website.
+- Ensure you have sufficient permissions to write to the `/usr/local/bin` directory.
+- CDM is only applicable to macOS.
+
+## Support
+If you found this helpful, consider buying me a coffee or giving it a ⭐️. Thanks for your support!
+
+<img width="399" alt="Support" src="https://github.com/user-attachments/assets/bdd2226b-6282-439d-be92-5311b6e9d29c">
+<br><br>
+<a href="#chromedriver-manager-en">Back to Top</a>
